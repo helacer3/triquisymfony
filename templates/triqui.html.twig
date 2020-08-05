@@ -1,0 +1,31 @@
+{# templates/milescarrental/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 mt-5 text-center">
+            <table>
+                {% for c in 0..2 %}
+                    <tr>
+                        {% for f in 0..2 %}
+                            <td id="item_{c}_{f}">
+                                <button id="button_{c}_{f}" data-itemx="{c}" data-itemy="{f}" class="btnJuego">Jugar</button>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+  {{ parent() }}
+  <script src="https://kit.fontawesome.com/d82bcd6b44.js" crossorigin="anonymous"></script>
+{% endblock %}
